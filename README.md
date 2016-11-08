@@ -12,5 +12,5 @@ git clone git://github.com/jorgeamaya/Malaria/SamplingTest.git
 
 ##Bug report
 To report bugs, please open an issue or send and e-mail to:
-*j.e.amaya.romero@student.rug.nl
-*joreamayarom@unal.edu.co
+* j.e.amaya.romero@student.rug.nl
+* joreamayarom@unal.edu.co

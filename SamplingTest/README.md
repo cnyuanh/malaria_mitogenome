@@ -66,5 +66,5 @@ sbatch sam.sh $rate
 ##Reference
 Integrated to this pipeline are the scripts of other people:
 
-[picard](https://github.com/broadinstitute/picard)
-[MITObim](https://github.com/chrishah/MITObim)
+* [picard](https://github.com/broadinstitute/picard)
+* [MITObim](https://github.com/chrishah/MITObim)

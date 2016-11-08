@@ -4,7 +4,12 @@
 Read this whole file before using the script
 
 ##Description: 
-Since MITObim requires appropriate sampling rates to produce nice results, these scripts subsample, assemble, align, evaluate and report the quality of the assemblies for 765 malaria mitochondrial genomes in an authomatic fashion. If you plan to refurbish these script to fit your needs, run '~grep "Refurbish" \*.sh' in the main directory and you'll get a report of all the lines that must be edited. This scripts were desing to run on Slurm Version 16.05
+Since MITObim requires appropriate sampling rates to produce nice results, these scripts subsample, assemble, align, evaluate and report the quality of the assemblies for 765 malaria mitochondrial genomes in an authomatic fashion. If you plan to refurbish these script to fit your needs, run 
+```
+grep "Refurbish" \*.sh
+grep "Refurbish" Code/control.py
+```
+in the main directory and you'll get a report of all the lines that must be edited. This scripts were desing to run on Slurm Version 16.05
 
 ##Clone this repository
 You should be able to clone this repository and start working immediately, just do:

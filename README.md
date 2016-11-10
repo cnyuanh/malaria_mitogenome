@@ -3,6 +3,10 @@
 ##Description: 
 A series of utilities and scripts to assemble and analyze mitochondrial genomes. Each directory has its own README.md file, read it carefully before using the code.
 
+* SamplingTest: Obtain addecaute sampling rates for your dataset.
+* 765G: Assemble mitochondrial genomes of 765 malaria mosquitoe from sam files.
+* 16G: Assembles mitochondrial genomes of 75 malaria mosquitoe from bam files.
+
 ##Clone this repository
 You should be able to clone this repository and start working immediately, just do:
 

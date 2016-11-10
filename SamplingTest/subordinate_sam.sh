@@ -19,15 +19,18 @@ module load Python/2.7.11-foss-2016a
 module load picard/1.130-Java-1.7.0_80
 module load Java/1.8.0_92
 
-#(Refurbish: This is probably the script that need more reworking and there is no correct formula. Be sure to produce mit_mapped_norm.fastq, mit_mapped_norm.fastq2, these files containr forward and reverse reads.)
+#(Refurbish: This is probably the script that need more reworking and there is no correct formula. Be sure to produce mit_mapped_norm.fastq, mit_mapped_norm.fastq2, these files container forward and reverse reads. I have include two lines that show how bam files can be used to produce mit_mapped_norm.qsor.bam. The rest of the script run normally)
 
 # Create the qsort.bam file
 mkdir Results/$1
 gunzip -c Data/$1/mit_mapped_norm.sam.gz > Results/$1/mit_mapped_norm.sam
 
 samtools view -s $2 -bT Data/reference/AGAMB_MTgenome.fasta Results/$1/mit_mapped_norm.sam > Results/$1/mit_mapped_norm.bam #Use this line to subsample
-
 samtools sort -n -o Results/$1/mit_mapped_norm.qsort.bam Results/$1/mit_mapped_norm.bam
+
+#Uncomment this line to process files in *.bam format
+#samtools view -s $2 -h -o Results/$1\.bam Data/$1/pest_realigned.bam
+#samtools sort -n -o Results/$1/mit_mapped_norm.qsort.bam Results/$1\.bam
 rm -f Results/$1/mit_mapped_norm.sam 
 
 # Create the fastq and fastq2 files

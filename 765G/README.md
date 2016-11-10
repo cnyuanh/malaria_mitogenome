@@ -33,7 +33,7 @@ sbatch sam.sh
 2. Results/Assembly: A directory with the assembled genomes.
 
 ##Additional Notes
-1. These scripts force the IUPAC concensus in ambiguous calls. To do so, flad fnicpst=yes has been included in the parameters of manifest.conf as well in MITObim.pl. To verify the line type:
+1. These scripts force the IUPAC concensus in ambiguous calls. To do so, flag fnicpst=yes has been included in the parameters of manifest.conf as well in MITObim.pl. To verify the line type:
 
 ```
 grep -in "#Modified_Line" Code/MITObim_1.8.pl

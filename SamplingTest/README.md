@@ -52,6 +52,7 @@ sbatch sam.sh $rate
 1. Results/Count\_0.025.csv: A file with the number of ambiguities found in each sequence for that particular sampling rate after removing the control sequence.
 2. Results/seqs\_0.025.afa: A file with the alignment for assemblies produced for that sampling rate.
 3. Data/names\_0.5.csv: A file with the assemblies that had at least 1 ambiguitie when assembled at rate 0.025 and that you must assemble at a higher rate (This is the reason why you have to provide the appropriate order for your sampling rates).
+4. Results/Scores.csv: A  file with the recommended sampling rates
 
 ##Additional Notes
 Since it can be almost impossible to produce assemblies without a single ambiguity, my recommendation to stop once quality.sh returns a positive message. After performing the assemblies, you can check that with:
@@ -60,7 +61,7 @@ Since it can be almost impossible to produce assemblies without a single ambigui
 ./quality.sh
 ```
 
-If the results is negative, you can run the process again at a higher rate
+If the results is negative, you can run the process again at a higher rate. If the message is positive, use Results/Scores.csv and directory Def\_Assembly to perform the assemblies.
 
 ```
 rate=0.05

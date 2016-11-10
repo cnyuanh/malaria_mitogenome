@@ -25,7 +25,7 @@ git clone git://github.com/jorgeamaya/Malaria/SamplingTest.git
 3. ali.sh and subordinate\_ali.sh: Aligns the sequences.
 4. remove.sh: Reports wich sequences produces assemblies of good quality and which sequences must be realigned at a higher rate.
 5. clean.sh: Cleans the Results directory.
-6. quality.sh: Check if there are assemblies with more than an arbitrary threshold of ambiguities. The threshold is passed to the script as an argument.
+6. quality.sh: Check if there are assemblies with more than an arbitrary threshold of ambiguities.
 
 ##Usage:
 
@@ -57,8 +57,7 @@ sbatch sam.sh $rate
 Since it can be almost impossible to produce assemblies without a single ambiguity, my recommendation to stop once quality.sh returns a positive message. After performing the assemblies, you can check that with:
 
 ```
-rate=0.025
-./quality.sh $rate
+./quality.sh
 ```
 
 If the results is negative, you can run the process again at a higher rate

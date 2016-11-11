@@ -4,9 +4,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=ass%j.log
+#SBATCH --job-name=ass.log
 #SBATCH --mem=500GB
 #SBATCH --partition=himem
+#SBATCH --output=ass%j.log
 
 #Description: Performs the assembly
 #Written by: Jorge Eduardo Amaya Romero

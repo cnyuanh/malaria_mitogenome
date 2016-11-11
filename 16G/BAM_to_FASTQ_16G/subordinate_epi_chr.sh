@@ -4,8 +4,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=bam%j.log
+#SBATCH --job-name=bam
 #SBATCH --mem=100GB
+#SBATCH --output=bam%j.log
 
 #Description: Subset the *.fastq.gz files
 #Written by: Jorge Eduardo Amaya Romero
@@ -27,13 +28,15 @@ mkdir -p Results/$1/samples/$2
 #(#Refurbish the lines with path to files) 
 
 if [ $1 == "16G_epiroticus" ];	then
-	lines=$(zcat path/to/$1/samples/$2/pe_1_trimmed.fq.gz | echo $((`wc -l`)))
-	zcat /path/to/$1/samples/$2/pe_1_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq
-	zcat /path/to/$1/samples/$2/pe_2_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq2
+        if [ $(bc <<< "$3 == 0.025") -eq 1 ]; then
+#	zcat /path/to/$1/samples/$2/pe_1_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq
+#	zcat /path/to/$1/samples/$2/pe_2_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq2
+	fi
 else #For 16_christyi
-	lines=$(zcat path/to/$1/samples/$2/pe_1_trimmed.fq.gz | echo $((`wc -l`)))
-	zcat /path/to/$1/samples/$2/pe_1_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq
-	zcat /path/to/$1/samples/$2/pe_2_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq2
+        if [ $(bc <<< "$3 == 0.025") -eq 1 ]; then
+#	zcat /path/to/$1/samples/$2/pe_1_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq
+#	zcat /path/to/$1/samples/$2/pe_2_trimmed.fq.gz | sed -n 1,$((lines*$3)) > Results/$1/samples/$2/mit_mapped_norm.fastq2
+	fi
 fi
 
 # Create the interleaved file

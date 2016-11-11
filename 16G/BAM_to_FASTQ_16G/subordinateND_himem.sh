@@ -4,9 +4,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=bam%j.log
+#SBATCH --job-name=bam
 #SBATCH --mem=200GB
 #SBATCH --partition=himem
+#SBATCH --output==bam%j.log
 
 #Description: Subset the *.fastq.gz files
 #Written by: Jorge Eduardo Amaya Romero

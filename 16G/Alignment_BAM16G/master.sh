@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=ali.log
+#SBATCH --job-name=ali
 #SBATCH --mem=1000
 
 #Description: Obtain the assemblies and align the sequences to the reference
@@ -17,9 +17,9 @@ module load Python/3.5.1-intel-2016a
 module load parallel/20160622-foss-2016a
 module load MIRA/4.0.2-foss-2016a-Python-2.7.11
 
-ln -s /path/to/16G/Assembly_BAM16G/Results/* Data/.
-cp /path/to/reference/AGAMB_MTgenome.fasta Results/seqs.fasta #Create the multifasta file and put the reference
-cat /path/to/Sequences/mtDNA_all_copy_N75_CUT14845_ID4GBK.fasta >> Results/seqs.fasta #Add the sequences of Fontaine et. al. 2015 without reference
+(#Refurbish: Modify this line to point to your data)
+#ln -s /path/to/16G/Assembly_BAM16G/Results/* Data/.
+#cp /path/to/reference/AGAMB_MTgenome.fasta Results/seqs.fasta #Create the multifasta file and put the reference
 
 #The structure of the directories is not regular. Make a list of all the directories that are going to reviewed.
 species=(16G_arabiensis 16G_melas 16G_quadriannulatus 16G_bamako 16G_gambiae 16G_merus 16G_epiroticus 16G_christyi)
@@ -107,7 +107,6 @@ for spe in "${species[@]}"
 				echo "Data/${spe}/samples/${sample}"
 			done 
 		else [ ${spe} == "16G_gambiae" ]	
-	        then
         	        for sample in "${gambiae[@]}"	
 			do	
                 	        echo "Data/${spe}/samples/${sample}"

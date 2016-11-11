@@ -4,9 +4,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=assMITO%j.log
+#SBATCH --job-name=ass.log
 #SBATCH --mem=500GB
 #SBATCH --partition=himem
+#SBATCH --output=ass_MITO%j.log
 
 #Description: Perform the assembly
 #Written by: Jorge Eduardo Amaya Romero

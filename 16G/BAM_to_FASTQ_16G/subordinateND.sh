@@ -5,7 +5,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --job-name=bam
-#SBATCH --mem=120GB
+#SBATCH --mem=20GB
+#SBATCH --output=bam%j.log
 
 #Description: Subset the *.fastq.gz files
 #Written by: Jorge Eduardo Amaya Romero

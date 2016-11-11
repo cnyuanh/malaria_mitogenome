@@ -4,9 +4,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=assMIRA%j.log
-#SBATCH --mem=500GB
-#SBATCH --partition=himem
+#SBATCH --job-name=ass
+#SBATCH --mem=100GB
+#SBATCH --output=assMIRA%j.log
 
 #Description: Performs the assembly
 #Written by: Jorge Eduardo Amaya Romero

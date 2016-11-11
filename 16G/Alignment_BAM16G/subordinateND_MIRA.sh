@@ -3,7 +3,7 @@
 #SBATCH --time=00:05:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=ali0.1
+#SBATCH --job-name=ali
 #SBATCH --mem=10000
 
 #Description: Obtain the last assembly with the minimum amount of IUPAC ambiguities

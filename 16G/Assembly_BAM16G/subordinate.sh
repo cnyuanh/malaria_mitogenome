@@ -4,8 +4,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=ass%k.log
+#SBATCH --job-name=ass
 #SBATCH --mem=100GB
+#SBATCH --output=ass%j.log
 
 #Description: Perform the assembly
 #Written by: Jorge Eduardo Amaya Romero
@@ -26,11 +27,11 @@ cd Results/$1/samples/$2
 ln -s ../../../../Data/$1/samples/$2/interleaved.fastq reads.fastq 
 ln -s ../../../../Data/$1/samples/$2/mit_mapped_norm.fastq mit_mapped_norm.fq
 ln -s ../../../../Data/$1/samples/$2/mit_mapped_norm.fastq2 mit_mapped_norm.fq2
-ln -s ../../../../Data/reference/AGAMB_MTgenome.fasta reference.fa
+ln -s ../../../../Data/AGAMB_MTgenome.fasta reference.fa
 
 #Run Mira and MITObim
-cp ../../../../Code/manifest.conf .
-cp ../../../../Code/MITObim_1.8.pl .
+cp    ../../../../Code/manifest.conf .
+cp    ../../../../Code/MITObim_1.8.pl .
 
 sed -i "20s/.*/strain = $2/g" manifest.conf
 

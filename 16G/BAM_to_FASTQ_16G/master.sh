@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --job-name=bam.log
+#SBATCH --job-name=bam
 #SBATCH --mem=100
 
 #Description: Subset the *.fastq.gz files
@@ -20,7 +20,7 @@ module load picard/1.130-Java-1.7.0_80
 module load Java/1.8.0_92
 
 #Link the data sets (Refurbish: Change to path to the directory that contains your data)
-ln -s /path/to/samples/* Data/.
+#ln -s /path/to/samples/* Data/.
 
 #Files per assembly method
 MIRA=(C27.2 M20.7 45.3 C27.3  44.4  A7.4 40.2  44.2)
@@ -46,11 +46,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		sbatch subordinate.sh "16G_quadriannulatus" ${sample} ${rate}
 	elif [ ${spe} == "Bamako" ]; then
 	        echo "Data/16G_bamako/samples/${sample} Rate ${rate}"
-		if [ ${sample} == "KL0829" ]; then
-			sbatch subordinate.sh "16G_bamako" ${sample} ${rate}
-		else
-			sbatch subordinate.sh "16G_bamako" ${sample} ${rate}
-		fi
+		sbatch subordinate.sh "16G_bamako" ${sample} ${rate}
 	elif [ ${spe} == "Epiroticus" ]; then
 		echo "Data/16G_epiroticus/samples/${sample} Rate ${rate}"
 		sbatch subordinate_epi_chr.sh "16G_epiroticus" ${sample} ${rate}
@@ -61,7 +57,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		echo "Data/16G_gambiae/samples/ND1/${sample} Rate"
 		if [[ ${MIRA[*]} =~ $sample ]]; then  
 			echo "MIRA Data/16G_gambiae/samples/ND1/${sample} Rate"
-			sbatch subordinateND.sh "16G_gambiae" "ND1" ${sample} 
+			sbatch subordinateND.sh "16G_gambiae" "ND1" ${sample} ${rate} 
 		else 
 			echo "MITO Data/16G_gambiae/samples/ND1/${sample} Rate"
 			sbatch subordinateND.sh "16G_gambiae" "ND1" ${sample} ${rate} 
@@ -70,7 +66,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		echo "Data/16G_gambiae/samples/ND2/${sample} Rate"
 		if [[ ${MIRA[*]} =~ $sample ]]; then  
 			echo "MIRA Data/16G_gambiae/samples/ND2/${sample} Rate"
-			sbatch subordinateND.sh "16G_gambiae" "ND2" ${sample} 
+			sbatch subordinateND.sh "16G_gambiae" "ND2" ${sample} ${rate}
 		else 
 			echo "MITO Data/16G_gambiae/samples/ND2/${sample} Rate"
 			sbatch subordinateND.sh "16G_gambiae" "ND2" ${sample} ${rate}
@@ -79,7 +75,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		echo "Data/16G_gambiae/samples/ND3/${sample} Rate"
 		if [[ ${MIRA[*]} =~ $sample ]]; then  
 			echo "MIRA Data/16G_gambiae/samples/ND3/${sample} Rate" 
-			sbatch subordinate.sh "16G_gambiae" "ND3" ${sample} 
+			sbatch subordinateND.sh "16G_gambiae" "ND3" ${sample} ${rate}
 		else 
 			echo "MITO Data/16G_gambiae/samples/ND3/${sample} Rate"
 			sbatch subordinateND.sh "16G_gambiae" "ND3" ${sample} ${rate}
@@ -88,7 +84,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		echo "Data/16G_gambiae/samples/ND4/${sample} Rate"
 		if [[ ${MIRA[*]} =~ $sample ]]; then  
 			echo "MIRA Data/16G_gambiae/samples/ND4/${sample} Rate"
-			sbatch subordinateND.sh "16G_gambiae" "ND4" ${sample}
+			sbatch subordinateND.sh "16G_gambiae" "ND4" ${sample} ${rate}
 		else 
 			echo "MITO Data/16G_gambiae/samples/ND4/${sample} Rate"
 			sbatch subordinateND.sh "16G_gambiae" "ND4" ${sample} ${rate}

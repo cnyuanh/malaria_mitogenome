@@ -1,7 +1,6 @@
 rm(list=ls())
 library(ggmap)
 library(ggplot2)
-library(varhandle)
 library(grid)
 library(ggtree)
 library(png)
@@ -39,9 +38,19 @@ p2 <- p1 +
   geom_point(data = all[which(all$source == "1000G"),], aes(x =longitude_end, y = latitude_end), colour = "red") +
   coord_cartesian() 
 
-#Render the Whole sample
+#Render the discriminating between Fontaine et. al. 2015 and 1000G
 p3 <- p2 +
   geom_point(data = all, aes(x =longitude_end, y = latitude_end, color = population, size=freq)) +
+  scale_size_continuous(range = c(8,20),guide=FALSE) +
+  scale_color_manual(values=c17) +
+  guides(fill=FALSE, alpha = FALSE, size = FALSE) +
+  geom_text(data= all, aes(x =longitude_end, y = latitude_end,label= freq)) +
+  theme(legend.title=element_blank()) + 
+  guides(colour = guide_legend(override.aes = list(size=6))) 
+
+#Render the discriminating between species
+p4 <- p2 +
+  geom_point(data = all, aes(x =longitude_end, y = latitude_end, color = Spe, size=freq)) +
   scale_size_continuous(range = c(8,20),guide=FALSE) +
   scale_color_manual(values=c17) +
   guides(fill=FALSE, alpha = FALSE, size = FALSE) +
@@ -55,7 +64,6 @@ g_legend<-function(a.gplot){
   leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box") 
   legend <- tmp$grobs[[leg]] 
   return(legend)} 
-legend <- g_legend(p3) 
 
 #Produce the plots
 png("map.png")
@@ -70,10 +78,20 @@ png("map_2.png")
 p2
 dev.off()
 
-png("map_final.png")
+png("map_population.png")
 grid.arrange(p3 + theme(legend.position = "none"),ncol=1, nrow=1)
 dev.off()
 
-png("legend_final.png")
+png("legend_population.png")
+legend <- g_legend(p3) 
+grid.arrange(legend,ncol=1, nrow=1)
+dev.off()
+
+png("map_species.png")
+grid.arrange(p4 + theme(legend.position = "none"),ncol=1, nrow=1)
+dev.off()
+
+png("legend_species.png")
+legend <- g_legend(p4) 
 grid.arrange(legend,ncol=1, nrow=1)
 dev.off()

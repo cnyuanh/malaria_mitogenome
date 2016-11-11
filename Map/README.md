@@ -1,4 +1,4 @@
-# Find appropriate sampling rates for MITObim 
+# Create maps with populations marked as tacks 
 *Written by: Jorge Eduardo Amaya Romero*
 
 Read this whole file before using the script

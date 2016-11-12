@@ -4,7 +4,7 @@ Last revision: 15-10-2016
 Status: Completed
 
 ## Description: 
-The scripts in this directory create a series of tables and plots to compare the quality of the alignments with and without control region for further analysis.
+The scripts in this directory create a series of tables and plots to compare the quality of the alignments with and without control region for further analysis. Remove the control region using your own script or a program like Geneious.
 
 ## Additional notes and mode of execution:
 

@@ -7,6 +7,7 @@ A series of utilities and scripts to assemble and analyze mitochondrial genomes.
 * 765G: Assemble mitochondrial genomes of 765 malaria mosquitoes from sam files.
 * 16G: Assemble mitochondrial genomes of 75 malaria mosquitoes from bam files.
 * 844G: Combine the assemblies produced in 765G and 16G and align sequences.
+* Map: Creates a Map with populations marked with tacks.
 
 ##Clone this repository
 You should be able to clone this repository and start working immediately, just do:

@@ -8,7 +8,7 @@ The scripts in this directory create a series of tables and plots to compare the
 
 ## Additional notes and mode of execution:
 
-Be sure to change the name of your reference, and files in script.sh
+Be sure to change the name of your reference, and Data/\*.fasta files in script.sh
 
 Execution
 

@@ -9,6 +9,7 @@ A series of utilities and scripts to assemble and analyze mitochondrial genomes.
 * 844G: Combine the assemblies produced in 765G and 16G and align sequences.
 * Map: Creates a Map with populations marked with tacks.
 * Control Removal: Creates a series o plots showing the quality of the alignment with and without control region and a extra histogram with the frequency of per position in the concensus.
+* Jmodeltest: Evaluates and selectes the best subtitution models 
 
 ##Clone this repository
 You should be able to clone this repository and start working immediately, just do:

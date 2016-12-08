@@ -1,0 +1,10 @@
+#NEXUS
+Begin paup;
+	set autoclose=yes warntree=no warnreset=no;
+	execute seqs_765Gproject_no_gaps_no_reference.nexus; 
+	dset distance=GTR basefreq=empirical rates=gamma shape=0.72 pinv=0.67;
+	nj brlens;
+	outgroup SAMN01087920;
+	savetrees file=Results/seqs_765Gproject_no_gaps_no_reference.tre brlens format=altnexus;
+	q;
+end;

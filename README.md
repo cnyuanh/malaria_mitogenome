@@ -11,6 +11,7 @@ A series of utilities and scripts to assemble and analyze mitochondrial genomes.
 * Control Removal: Creates a series o plots showing the quality of the alignment with and without control region and a extra histogram with the frequency of per position in the concensus.
 * Jmodeltest: Evaluates and selectes the best subtitution models 
 * Paup: Creates NJ Tree using parameters recommended by Jmodeltest.
+* Rarefaction: Script to automatize a rarection analysis.
 
 ##Clone this repository
 You should be able to clone this repository and start working immediately, just do:

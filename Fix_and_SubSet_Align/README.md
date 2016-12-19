@@ -6,7 +6,9 @@ Status: Completed
 ## Description: 
 This script standarizes the fasta headers. The format of the new fasta header is:
 
+```
 >Sample\_Id [ Species Population Country Region/Town Latitude Longitude Year ]
+```
 
 Information between brackets is contained in a separate csv file that can be feed to the program.
 
@@ -29,4 +31,3 @@ Information between brackets is contained in a separate csv file that can be fee
 I tailored this script specifically for my needs. If you want to use it:
 
 1. Be sure that the sequences' ID match the one in the csv file. Consider using sed to clean your fasta headers (as I did in script.sh)
-2. 

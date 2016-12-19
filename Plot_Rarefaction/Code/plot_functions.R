@@ -21,7 +21,7 @@ make_trend_plot <- function(data,level,variance) {
   if(level=="concens"){
         print("Load vector concens")
         col = c("tomato","goldenrod3","red4","darkorchid3","goldenrod1","blue4","red","darkorchid1","orchid2","purple4","darkgray","pink","darkgreen","blueviolet","green","gold","peachpuff","coral4","violet","cadetblue4")
-        sha = c(17,15,15,15,17,17,17,17,17,15,15,16,16,15,18,16,16,16,16,18)
+        sha = c(8,15,16,17,18,8,15,16,17,18,8,15,16,17,18,8,15,16,17,18)
   }else{
     print("Load vector species")
     col = c("darkgray","goldenrod1","blueviolet","coral4","red4","darkorchid3","blue4","darkgreen","cadetblue4")

@@ -29,5 +29,5 @@ AN0001_C,An.coluzzii,CMM
 ## Note: 
 I tailored this pipeline specifically for my needs. If you want to use it:
 
-1. In Code/plot.py, be sure to remove your outgroup (if you want) from species, names and mat. You will need to know the position of your outgroup. (Check how I did it in the script. My outgroup are the first and second IDs)
-2. Fix the colors and shapes as you please in Code/plot.py
+1. In Code/plot.R, be sure to remove your outgroup (if you want) from species, names and mat. You will need to know the position of your outgroup. (Check how I did it in the script. My outgroup are the first and second IDs)
+2. Fix the colors and shapes as you please in Code/plot.R

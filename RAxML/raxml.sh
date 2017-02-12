@@ -5,6 +5,7 @@
 #Date:10-10-2016
 #Comment: Move manually your results to the designated directiores in Results
 
+#Link or copy your alignments into Data 
 #ln -s /home/jorgeromero/PhyTree/Fix_and_SubSet_Align/Results/*.fasta Data/.
 
 #Run RAxML on Fontaine et. al. (2015) + Bwambae

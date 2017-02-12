@@ -16,6 +16,7 @@ A series of utilities to assemble and analyze mitochondrial genomes. Each direct
 ##Phylogenetics and population genetics analysis
 * Jmodeltest: Evaluate and select the best subtitution models for subsequent phylogenetic analysis.
 * Paup: Create NJ Tree using parameters recommended by Jmodeltest pipeline.
+* RAxML: Create ML trees using GTRGAMMA.
 * NMDS: Perform and plot the NMDS scaling.
 * Rarefaction: Perform rarefaction analysis per species and population.
 * Plot\_Rarefaction: Plot the output of Rarefaction pipeline.

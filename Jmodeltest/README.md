@@ -19,5 +19,5 @@ nohup ./run_jmodel.sh &
 ```
 
 ##Note:
-*To run this script, a working version of jmodeltest is needed in the main directory.
-*Data/Outgroup_Mitobim contains files in which the outgroups were assembled with Mitobim.
+* To run this script, a working version of jmodeltest is needed in the main directory.
+* Data/Outgroup_Mitobim contains files in which the outgroups were assembled with Mitobim.

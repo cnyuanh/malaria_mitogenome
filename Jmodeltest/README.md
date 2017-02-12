@@ -1,8 +1,11 @@
 #Obtain substitution model for multifasta alignments
 
-##Description: Run classic jmodeltest analysis (88 models - 4 categories, test AIC and BIC)
-##Author: Jorge Eduardo Amaya Romero
-##Date:16-10-2016
+##Description: 
+Run classic jmodeltest analysis (88 models - 4 categories, test AIC and BIC)
+##Author: 
+Jorge Eduardo Amaya Romero
+##Date:
+16-10-2016
 
 ##Data: 
 A series of alignments in fasta format

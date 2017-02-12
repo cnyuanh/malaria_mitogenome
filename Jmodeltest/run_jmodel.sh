@@ -4,9 +4,9 @@
 #Author: Jorge Eduardo Amaya Romero
 #Date:10-10-2016
 
-ln -s /home/jorgeromero/PhyTree/Fix_and_SubSet_Align/Results/*.fasta Data/.
+#ln -s /home/jorgeromero/PhyTree/Fix_and_SubSet_Align/Results/*.fasta Data/.
 
-for file in Data/*
+for file in Data/*.fasta
 	do
 	d=${file%%.fasta}	
 	echo ${d##*/}

@@ -1,25 +1,20 @@
-#!/bin/bash
+#Obtain substitution model for multifasta alignments
 
-#Description: Run classic jmodeltest analysis (88 models - 4 categories, test AIC and BIC and obtaing a phylogeny (-a))
-#Author: Jorge Eduardo Amaya Romero
-#Date:16-10-2016
+##Description: Run classic jmodeltest analysis (88 models - 4 categories, test AIC and BIC)
+##Author: Jorge Eduardo Amaya Romero
+##Date:16-10-2016
 
-##Description: 
-Calculate the best subsitution model for an alignment.
+##Data: 
+A series of alignments in fasta format
 
-##Pipelines and Scripts
+##Results: 
+*.jrun files with the output of Jmodeltest2
 
-1. ./master.sh: Produces the plots.
-
-##Usage:
-
+##Usage
 ```
-nohup java -jar jmodeltest-2.1.10/jModelTest.jar -d alignment.fasta -g 4 -i -f -AIC -BIC -a &
+nohup ./run_jmodel.sh &
 ```
 
-##Results
-1. nohup.out: A file jmodeltest-2.1.10 output
-
-##Additional notes
-A running version of jmodeltest-2.1.10 in this directory.
-
+##Note:
+*To run this script, a working version of jmodeltest is needed in the main directory.
+*Data/Outgroup_Mitobim contains files in which the outgroups were assembled with Mitobim.

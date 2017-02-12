@@ -1,9 +1,8 @@
 #Obtain substitution model for multifasta alignments
+Written by: Jorge Eduardo Amaya Romero
 
 ##Description: 
 Run classic jmodeltest analysis (88 models - 4 categories, test AIC and BIC) on a series of multifasta files.
-##Author: 
-Jorge Eduardo Amaya Romero
 ##Date:
 16-10-2016
 
